@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐至核酸检测地点</title>
+    <style>
+        .add {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .add .map {
+            width: 100%;
+            z-index: 1;
+        }
+
+        .img {
+            z-index: 99;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            color: red;
+            border-radius: 10px;
+            padding: 5px;
+            border: 2px solid #999;
+            font-weight: 700;
+
+            font-size: 12px;
+        }
+
+        .add .jian1 {
+
+            top: 60%;
+            left: 33%;
+
+        }
+
+        .jian2 {
+            top: 48%;
+            left: 6%;
+        }
+
+        .jian3 {
+            top: 79%;
+            left: 45%;
+        }
+
+        .jian4 {
+            top: 88%;
+            left: 48%;
+        }
+
+        .jian5 {
+            top: 50%;
+            left: 33%;
+        }
+
+        .jian6 {
+            top: 68%;
+            left: 6%;
+        }
+
+        .jian7 {
+            top: 46%;
+            left: 60%;
+        }
+
+        .jian8 {
+            top: 55%;
+            left: 33%;
+        }
+
+        .jian9 {
+            top: 56%;
+            left: 33%;
+        }
+
+        .jian10 {
+            top: 57%;
+            left: 33%;
+        }
+
+        .jian11 {
+            top: 58%;
+            left: 40%;
+        }
+
+        .jian12 {
+            top: 57%;
+            left: 39%;
+        }
+
+        .jian13 {
+            top: 56%;
+            left: 38%;
+        }
+
+        .jian14 {
+            top: 56%;
+            left: 37%;
+        }
+
+        .jian15 {
+            top: 58%;
+            left: 36%;
+        }
+
+        .jian16 {
+            top: 57%;
+            left: 35%;
+        }
+
+        .jian17 {
+            top: 56%;
+            left: 34%;
+        }
+
+        .img img {
+            width: 30px;
+        }
+
+        .modal {
+            display: none;
+            /* 默认隐藏 */
+            position: fixed;
+            z-index: 199;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            -webkit-animation-name: fadeIn;
+            -webkit-animation-duration: 0.4s;
+            animation-name: fadeIn;
+            animation-duration: 0.4s
+        }
+
+        /* 弹窗内容 */
+        .modal-content {
+            position: fixed;
+            bottom: 0;
+            background-color: #fefefe;
+            width: 100%;
+            -webkit-animation-name: slideIn;
+            -webkit-animation-duration: 0.4s;
+            animation-name: slideIn;
+            animation-duration: 0.4s
+        }
+
+        /* 关闭按钮 */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        /* 添加动画 */
+        @-webkit-keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+    <div class="add">
+        <img class="map" src="./a.webp" alt="">
+
+        <div name="lezhi1" class="img jian1">
+            <img src="./jian.webp" alt="">
+            成安渝高速乐至站出口点位
+        </div>
+        <div name="gaosi" class="img jian2">
+            <img src="./jian.webp" alt="">
+            成安渝高速高寺站出口点位
+        </div>
+        <div name="shituan" class="img jian3">
+            <img src="./jian.webp" alt="">
+            成安渝高速石湍站出口点位
+        </div>
+        <div name="tonglv" class="img jian4">
+            <img src="./jian.webp" alt="">
+            成资渝高速通旅站出口点位
+        </div>
+        <div name="lezhi2" class="img jian5">
+            <img src="./jian.webp" alt="">
+            遂资眉高速乐至站出口点位
+        </div>
+        <div name="zhongtian" class="img jian6">
+            <img src="./jian.webp" alt="">
+            遂资眉高速中天站出口点位
+        </div>
+        <div name="longmen" class="img jian7">
+            <img src="./jian.webp" alt="">
+            遂资眉高速龙门站出口点位
+        </div>
+        <div name="xianhe" class="img jian8">
+            <img src="./jian.webp" alt="">
+            乐至县仙鹤大道
+        </div>
+        <div name="zhonggu" class="img jian9">
+            <img src="./jian.webp" alt="">
+            二零直线天池镇钟鼓楼巷
+        </div>
+        <div name="chuane" class="img jian10">
+            <img src="./jian.webp" alt="">
+            乐至县川鄂东路
+        </div>
+        <div name="gongyuan" class="img jian11">
+            <img src="./jian.webp" alt="">
+            乐至县天池镇公园路
+        </div>
+        <div name="tianyi" class="img jian12">
+            <img src="./jian.webp" alt="">
+            乐至县天颐新区医院
+        </div>
+        <div name="hexing" class="img jian13">
+            <img src="./jian.webp" alt="">
+            乐至县和信医院
+        </div>
+        <div name="shanghao" class="img jian14">
+            <img src="./jian.webp" alt="">
+            乐至县上好医院
+        </div>
+        <div name="renming" class="img jian15">
+            <img src="./jian.webp" alt="">
+            乐至县人民医院
+        </div>
+        <div name="zhongyi" class="img jian16">
+            <img src="./jian.webp" alt="">
+            乐至县中医医院
+        </div>
+        <div name="nanta" class="img jian17">
+            <img src="./jian.webp" alt="">
+            乐至县南塔社区卫生服务中心
+        </div>
+        <div id="myModal" class="modal">
+
+            <!-- 弹窗内容 -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2 class="head">弹窗头部</h2>
+                </div>
+                <div class="modal-body">
+                    <p>点位所属场景：</p>
+                    <p class="body">弹窗文本...</p>
+                </div>
+                <div class="modal-footer">
+                    <h3>工作时间</h3>
+                </div>
+                <div class="modal-body">
+                    <p class="time"></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    $(".img").click(function () {
+        let name = $(this).attr('name')
+        switch (name) {
+            case "lezhi1":
+                $(".head").text("成安渝高速乐至站出口点位")
+                $(".body").text("成安渝高速乐至站出口点位")
+                $(".time").text("24小时")
+                break;
+            case "gaosi": // 当表达式的结果等于 value2 时，则执行该代码
+                $(".head").text("成安渝高速高寺站出口点位")
+                $(".body").text("成安渝高速高寺站出口点位")
+                $(".time").text("24小时")
+                break;
+            case "shituan":
+                $(".head").text("成安渝高速石湍站出口点位")
+                $(".body").text("成安渝高速石湍站出口点位")
+                $(".time").text("24小时")
+                break;
+            case "tonglv":
+                $(".head").text("成资渝高速通旅站出口点位")
+                $(".body").text("成资渝高速通旅站出口点位")
+                $(".time").text("24小时")
+                break;
+            case "lezhi2":
+                $(".head").text("遂资眉高速乐至站出口点位")
+                $(".body").text("遂资眉高速乐至站出口点位")
+                $(".time").text("24小时")
+                break;
+            case "zhongtian":
+                $(".head").text("遂资眉高速中天站出口点位")
+                $(".body").text("遂资眉高速中天站出口点位")
+                $(".time").text("24小时")
+                break;
+            case "longmen":
+                $(".head").text("遂资眉高速龙门站出口点位")
+                $(".body").text("遂资眉高速龙门站出口点位")
+                $(".time").text("24小时")
+                break;
+            case "xianhe":
+                $(".head").text("乐至县仙鹤大道")
+                $(".body").text("乐至县陈毅广场")
+                $(".time").text("8:30-12:00  2:30-18:00")
+                break;
+            case "gongyuan":
+                $(".head").text("乐至县天池镇公园路")
+                $(".body").text("乐至县天池镇公园点位")
+                $(".time").text("8:30-12:00  2:30-18:00")
+                break;
+            case "zhonggu":
+                $(".head").text("二零直线天池镇钟鼓楼巷2号")
+                $(".body").text("乐至县北门车站点位")
+                $(".time").text("8:30-12:00  2:30-18:00")
+                break;
+            case "chuane":
+                $(".head").text("乐至县川鄂东路")
+                $(".body").text("乐至县60车队点位")
+                $(".time").text("8:30-12:00  2:30-18:00")
+                break;
+            case "tianyi":
+                $(".head").text("乐至县天颐新区医院")
+                $(".body").text("乐至天颐新区医院原检尽检点位")
+                $(".time").text("8:30-12:00  2:30-18:00")
+                break;
+            case "hexing":
+                $(".head").text("乐至县和信医院")
+                $(".body").text("乐至和信医院原检尽检点位")
+                $(".time").text("8:30-12:00  2:30-18:00")
+                break;
+            case "shanghao":
+                $(".head").text("乐至县上好医院")
+                $(".body").text("乐至上好医院原检尽检点位")
+                $(".time").text("8:30-12:00  2:30-18:00")
+                break;
+            case "renming":
+                $(".head").text("乐至县人民医院")
+                $(".body").text("乐至县人民医院原检尽检点位")
+                $(".time").text("24小时")
+                break;
+            case "zhongyi":
+                $(".head").text("乐至县中医医院")
+                $(".body").text("乐至县中医医院原检尽检点位")
+                $(".time").text("24小时")
+                break;
+            case "nanta":
+                $(".head").text("乐至县南塔社区卫生服务中心")
+                $(".body").text("乐至县南塔社区卫生服务中心原检尽检点位")
+                $(".time").text("8:30-12:00  2:30-18:00")
+                break;
+
+        }
+        $(".modal").show()
+    })
+    $(".close").click(function () {
+        $(".modal").hide()
+    })
+    var modal = document.getElementById('myModal');
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</html>
